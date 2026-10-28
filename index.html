@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Alina Kiltra · AQUATICO TATTOO — Custom blackwork and contemporary tattooing">
+<meta name="description" content="Alina Kiltra · AQUATICO TATTOO — Custom tattoo artist in Vancouver, B.C. Blackout, blackwork and neon. Book a session by appointment.">
 <meta name="theme-color" content="#111111">
 <title>Alina Kiltra · AQUATICO — Tattoo Artist</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -362,7 +362,6 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    loading: lazy;
   }
 
   .piece-img-alt {
@@ -474,12 +473,10 @@
   /* ── CATEGORY TILES ── */
   .cat-tiles {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1px;
     background: var(--border);
   }
-
-  @media (max-width: 600px) { .cat-tiles { grid-template-columns: repeat(2, 1fr); } }
 
   .cat-tile {
     background: var(--light);
@@ -945,7 +942,6 @@
     .contact-right { padding: 40px 18px; }
     .footer-top { grid-template-columns: 1fr 1fr; }
     .wide-banner { flex-direction: column; align-items: flex-start; }
-    .cat-tiles { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 640px) {
@@ -971,12 +967,11 @@
     <span>Alina Kiltra · AQUATICO TATTOO</span><span class="ticker-dot"></span>
     <span>Depth in black. Movement in form.</span><span class="ticker-dot"></span>
     <span>Custom blackwork & contemporary tattooing</span><span class="ticker-dot"></span>
-    <span>Solid Projects · Blackout · Blackwork · Painting · Street Art</span><span class="ticker-dot"></span>
-    <span>Alina Kiltra · AQUATICO</span><span class="ticker-dot"></span>
+    <span>Solid Projects · Blackout · Blackwork</span><span class="ticker-dot"></span>
+    <span>Alina Kiltra · AQUATICO TATTOO</span><span class="ticker-dot"></span>
     <span>Depth in black. Movement in form.</span><span class="ticker-dot"></span>
     <span>Custom blackwork & contemporary tattooing</span><span class="ticker-dot"></span>
-    <span>Solid Projects · Blackout · Blackwork · Painting · Street Art</span><span class="ticker-dot"></span>
-    <span>Solid Projects · Blackout · Blackwork · Painting · Street Art</span><span class="ticker-dot"></span>
+    <span>Solid Projects · Blackout · Blackwork</span><span class="ticker-dot"></span>
   </div>
 </div>
 
@@ -986,8 +981,8 @@
     <a class="nav-logo" href="#">Alina Kiltra <span style="font-weight:300;letter-spacing:0.2em;font-size:11px;opacity:0.5;padding-left:6px;">AQUATICO TATTOO</span></a>
     <div class="nav-icons">
       <a class="nav-icon-link" href="#gallery">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 L21 21"/></svg>
-        <span data-i18n="nav_search">Search</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        <span data-i18n="nav_portfolio">Portfolio</span>
       </a>
       <a class="nav-icon-link" href="#contact">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
@@ -1000,10 +995,7 @@
     <div class="cat-link" data-cat="about" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'});return false;">About</div>
     <div class="cat-link" data-cat="blackout">Blackout</div>
     <div class="cat-link" data-cat="blackwork">Blackwork</div>
-    <div class="cat-link" data-cat="fullcolour">Full Colour</div>
     <div class="cat-link" data-cat="neon">Neon</div>
-    <div class="cat-link" data-cat="sold">Sold</div>
-    <div class="cat-link" data-cat="streetart">Street Art</div>
     <div class="cat-link" data-cat="new">New</div>
   </div>
 </nav>
@@ -1039,10 +1031,7 @@
     <button class="fpill active" data-f="all">All</button>
     <button class="fpill" data-f="blackout">Blackout</button>
     <button class="fpill" data-f="blackwork">Blackwork</button>
-    <button class="fpill" data-f="fullcolour">Full Colour</button>
     <button class="fpill" data-f="neon">Neon</button>
-    <button class="fpill" data-f="sold">Sold</button>
-    <button class="fpill" data-f="streetart">Street Art</button>
     <button class="fpill" data-f="new">New</button>
   </div>
 
@@ -1069,9 +1058,8 @@
     <h2 style="font-size:clamp(26px,4vw,42px);font-weight:300;line-height:1.05;letter-spacing:-0.02em;color:var(--black);margin-bottom:24px;">Contemporary blackwork shaped by <strong style="font-weight:700;">anatomy and movement.</strong></h2>
     <p style="font-size:13px;line-height:1.85;color:var(--gray);margin-bottom:18px;">I'm Alina Kiltra — tattoo artist working under the name <strong style="color:var(--black);font-weight:600;">AQUATICO</strong>. My practice focuses on custom blackwork and contemporary tattooing — creating pieces that engage with the body, move with it, and respect its anatomy rather than simply being placed on top of it.</p>
     <p style="font-size:13px;line-height:1.85;color:var(--gray);margin-bottom:18px;">Every tattoo begins with an honest conversation. I'm drawn to depth, contrast, and the natural forms that already exist within each person's body.</p>
-    <p style="font-size:13px;line-height:1.85;color:var(--gray);margin-bottom:18px;">Before becoming a tattoo artist, I spent several years traveling internationally as a circus performer, specializing in aerial hoop. Through studying the history and traditions of circus performance, I discovered some of my strongest influences: figures such as the contortionist and the world's most tattooed person, where the tattooed body becomes a living artwork brought to life through movement.</p>
     <p style="font-size:13px;line-height:1.85;color:var(--gray);margin-bottom:36px;">From this perspective emerged <strong style="color:var(--black);font-weight:600;">Solid Projects</strong>, an ongoing exploration of the relationship between mind, body, and movement: tattooing as an expression of the mind, the body as a solid form, and the aquatic as a symbol of transformation and fluidity.</p>
-    <a href="#contact" style="display:inline-block;background:var(--black);color:var(--white);border:1.5px solid var(--black);padding:13px 26px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;align-self:flex-start;" onmouseover="this.style.background='white';this.style.color='black'" onmouseout="this.style.background='black';this.style.color='white'">Work with me →</a>
+    <a href="#contact" style="display:inline-block;background:var(--black);color:var(--white);border:1.5px solid var(--black);padding:13px 26px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;align-self:flex-start;" onmouseover="this.style.background='white';this.style.color='black'" onmouseout="this.style.background='black';this.style.color='white'">Book with me →</a>
   </div>
 </section>
 
@@ -1081,7 +1069,7 @@
   <span class="sec-link" data-i18n="styles_link">Full gallery →</span>
 </div>
 
-<div class="cat-tiles" aria-label="Browse by style" style="grid-template-columns:repeat(6,1fr);">
+<div class="cat-tiles" aria-label="Browse by style">
   <div class="cat-tile" role="button" tabindex="0" aria-label="Blackout" onclick="document.querySelector('[data-cat=blackout]').click();document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
     <div class="cat-tile-bg" aria-hidden="true">
       <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><rect x="10" y="10" width="80" height="80" fill="#111" opacity="0.7"/><rect x="25" y="25" width="50" height="50" fill="#fff" opacity="0.08"/></svg>
@@ -1094,55 +1082,37 @@
     </div>
     <div class="cat-tile-label"><div class="ctl-name">Blackwork</div><div class="ctl-count">View pieces →</div></div>
   </div>
-  <div class="cat-tile" role="button" tabindex="0" aria-label="Full Colour" onclick="document.querySelector('[data-cat=fullcolour]').click();document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
-    <div class="cat-tile-bg" aria-hidden="true">
-      <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><circle cx="38" cy="42" r="20" fill="#111" opacity="0.12"/><circle cx="62" cy="42" r="20" fill="#111" opacity="0.18"/><circle cx="50" cy="62" r="20" fill="#111" opacity="0.1"/></svg>
-    </div>
-    <div class="cat-tile-label"><div class="ctl-name">Full Colour</div><div class="ctl-count">View pieces →</div></div>
-  </div>
   <div class="cat-tile" role="button" tabindex="0" aria-label="Neon" onclick="document.querySelector('[data-cat=neon]').click();document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
     <div class="cat-tile-bg" aria-hidden="true">
       <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="#111" stroke-width="1.5" fill="none"/><circle cx="50" cy="50" r="16" stroke="#111" stroke-width="1" fill="none" stroke-dasharray="4,3"/><circle cx="50" cy="50" r="5" fill="#111" opacity="0.4"/></svg>
     </div>
     <div class="cat-tile-label"><div class="ctl-name">Neon</div><div class="ctl-count">View pieces →</div></div>
   </div>
-  <div class="cat-tile" role="button" tabindex="0" aria-label="Sold" onclick="document.querySelector('[data-cat=sold]').click();document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
-    <div class="cat-tile-bg" aria-hidden="true">
-      <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><rect x="20" y="20" width="60" height="60" stroke="#111" stroke-width="1.5" fill="none"/><line x1="20" y1="20" x2="80" y2="80" stroke="#111" stroke-width="1"/><line x1="80" y1="20" x2="20" y2="80" stroke="#111" stroke-width="1"/></svg>
-    </div>
-    <div class="cat-tile-label"><div class="ctl-name">Sold</div><div class="ctl-count">View pieces →</div></div>
-  </div>
-  <div class="cat-tile" role="button" tabindex="0" aria-label="Street Art" onclick="document.querySelector('[data-cat=streetart]').click();document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
-    <div class="cat-tile-bg" aria-hidden="true">
-      <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><rect x="10" y="30" width="80" height="50" stroke="#111" stroke-width="1.5" fill="none"/><path d="M25 55 Q35 40 45 55 Q55 70 65 50 Q72 38 80 45" stroke="#111" stroke-width="2" fill="none"/><circle cx="22" cy="28" r="5" stroke="#111" stroke-width="1" fill="none"/><line x1="22" y1="23" x2="22" y2="16" stroke="#111" stroke-width="1"/></svg>
-    </div>
-    <div class="cat-tile-label"><div class="ctl-name">Street Art</div><div class="ctl-count">View pieces →</div></div>
-  </div>
 </div>
 
 <!-- PROCESS -->
-<section class="process-section">
-  <p class="process-eyebrow" data-i18n="process_eyebrow">How it works</p>
+<section class="process-section" id="process">
+  <p class="process-eyebrow" data-i18n="process_eyebrow">Tattoo Quotation Process</p>
   <div class="process-grid">
     <div class="process-step">
       <div class="step-num">01</div>
-      <h3 class="step-title" data-i18n="step1_title">First contact</h3>
-      <p class="step-text" data-i18n="step1_text">Tell me about your idea — the concept, the placement, references that move you. We'll talk through it by message or video call, no rush.</p>
+      <h3 class="step-title" data-i18n="step1_title">Initial Inquiry</h3>
+      <p class="step-text" data-i18n="step1_text">Tell me about your tattoo idea, including the concept, approximate size in cm, placement on the body, and any reference images you may have.</p>
     </div>
     <div class="process-step">
       <div class="step-num">02</div>
-      <h3 class="step-title" data-i18n="step2_title">Custom design</h3>
-      <p class="step-text" data-i18n="step2_text">Every piece is drawn from scratch for your body. I never reuse designs. The image is developed through the lens of graphic expression and natural form.</p>
+      <h3 class="step-title" data-i18n="step2_title">Design Assessment</h3>
+      <p class="step-text" data-i18n="step2_text">I’ll review your idea, references, and placement to understand the scope of the project and determine the best approach for your tattoo.</p>
     </div>
     <div class="process-step">
       <div class="step-num">03</div>
-      <h3 class="step-title" data-i18n="step3_title">The session</h3>
-      <p class="step-text" data-i18n="step3_text">A focused, considered environment. We work at the pace the piece demands — quality over speed, always.</p>
+      <h3 class="step-title" data-i18n="step3_title">Quote &amp; Planning</h3>
+      <p class="step-text" data-i18n="step3_text">Once I have all the necessary information, I’ll provide an estimated price and the approximate time required for the session.</p>
     </div>
     <div class="process-step">
       <div class="step-num">04</div>
-      <h3 class="step-title" data-i18n="step4_title">Healing & follow-up</h3>
-      <p class="step-text" data-i18n="step4_text">I'm available throughout the healing process and for any touch-up the work needs. The piece isn't finished until it's settled into the skin.</p>
+      <h3 class="step-title" data-i18n="step4_title">Booking Confirmation</h3>
+      <p class="step-text" data-i18n="step4_text">If you’re happy with the proposal, we’ll coordinate a date for your appointment. A deposit is required to secure your booking.</p>
     </div>
   </div>
 </section>
@@ -1156,14 +1126,14 @@
       I work by appointment only, with limited availability each month to keep the quality of every piece where it needs to be. Reach out to start the conversation — no idea is too rough to share.
     </p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;">
-      <a class="btn-fill" href="mailto:alinakiltra@gmail.com" data-i18n="contact_email">Email me</a>
+      <a class="btn-fill" href="mailto:bookings@alinakiltra.com" data-i18n="contact_email">Email me</a>
       <a class="btn-outline" href="https://instagram.com/aquatico_tattoo" target="_blank" rel="noopener">Instagram</a>
     </div>
   </div>
   <div class="contact-right">
     <div class="contact-item">
       <span class="ci-label" data-i18n="ci_email">Email</span>
-      <a class="ci-value" href="mailto:alinakiltra@gmail.com">alinakiltra@gmail.com</a>
+      <a class="ci-value" href="mailto:bookings@alinakiltra.com">bookings@alinakiltra.com</a>
     </div>
     <div class="contact-item">
       <span class="ci-label">Instagram</span>
@@ -1190,21 +1160,19 @@
     <div class="ft-col">
       <div class="ft-col-title" data-i18n="footer_col1">Studio</div>
       <a href="#gallery" data-i18n="footer_portfolio">Portfolio</a>
-      <a href="#contact" data-i18n="footer_about">About</a>
-      <a href="#contact" data-i18n="footer_process">Process</a>
+      <a href="#about" data-i18n="footer_about">About</a>
+      <a href="#process" data-i18n="footer_process">Process</a>
       <a href="#contact" data-i18n="footer_contact">Contact</a>
     </div>
     <div class="ft-col">
       <div class="ft-col-title">Full Spectrum</div>
       <a href="#gallery">Blackout</a>
       <a href="#gallery">Blackwork</a>
-      <a href="#gallery">Full Colour</a>
       <a href="#gallery">Neon</a>
-      <a href="#gallery">Street Art</a>
     </div>
     <div class="ft-col">
       <div class="ft-col-title" data-i18n="footer_col3">Connect</div>
-      <a href="mailto:alinakiltra@gmail.com">alinakiltra@gmail.com</a>
+      <a href="mailto:bookings@alinakiltra.com">bookings@alinakiltra.com</a>
       <a href="https://instagram.com/aquatico_tattoo" target="_blank" rel="noopener">@aquatico_tattoo</a>
       <a href="https://youtube.com/@AlinaKiltra" target="_blank" rel="noopener">@AlinaKiltra</a>
       <a href="#contact">Vancouver, B.C., Canada</a>
@@ -1215,7 +1183,7 @@
     <div class="footer-socials">
       <a href="https://instagram.com/aquatico_tattoo" target="_blank" rel="noopener">Instagram</a>
       <a href="https://youtube.com/@AlinaKiltra" target="_blank" rel="noopener">YouTube</a>
-      <a href="mailto:alinakiltra@gmail.com">Email</a>
+      <a href="mailto:bookings@alinakiltra.com">Email</a>
     </div>
   </div>
 </footer>
@@ -1248,7 +1216,7 @@
   Fields:
     name    — piece title (shown on card and lightbox)
     tag     — style category. Must match a filter button data-f value:
-              "blackout" | "illustration" | "fullcolour" | "healed" | "fineart" | "streetart"
+              "blackout" | "blackwork" | "neon"
     desc    — short description (lightbox)
     badge   — null | "new" | "exclusive"
     isNew   — true shows in the "New" nav category
@@ -1288,28 +1256,16 @@ const PIECES = [
   { name: "Piece 1",  tag: "blackwork",  badge: null, isNew: false, src: "", srcAlt: "", alt: "Blackwork tattoo piece 1",  desc: "" },
   { name: "Piece 2",  tag: "blackwork",  badge: null, isNew: false, src: "", srcAlt: "", alt: "Blackwork tattoo piece 2",  desc: "" },
 
-  /* ── FULL COLOUR ── */
-  { name: "Piece 1",  tag: "fullcolour", badge: null, isNew: false, src: "", srcAlt: "", alt: "Full colour tattoo piece 1", desc: "" },
-  { name: "Piece 2",  tag: "fullcolour", badge: null, isNew: false, src: "", srcAlt: "", alt: "Full colour tattoo piece 2", desc: "" },
-
   /* ── NEON ── */
   { name: "Piece 1",  tag: "neon",       badge: null, isNew: false, src: "", srcAlt: "", alt: "Neon tattoo piece 1",        desc: "" },
   { name: "Piece 2",  tag: "neon",       badge: null, isNew: false, src: "", srcAlt: "", alt: "Neon tattoo piece 2",        desc: "" },
-
-  /* ── SOLD ── */
-  { name: "Piece 1",  tag: "sold",       badge: null, isNew: false, src: "", srcAlt: "", alt: "Sold tattoo piece 1",        desc: "" },
-  { name: "Piece 2",  tag: "sold",       badge: null, isNew: false, src: "", srcAlt: "", alt: "Sold tattoo piece 2",        desc: "" },
-
-  /* ── STREET ART ── */
-  { name: "Piece 1",  tag: "streetart",  badge: null, isNew: false, src: "", srcAlt: "", alt: "Street art piece 1",         desc: "" },
-  { name: "Piece 2",  tag: "streetart",  badge: null, isNew: false, src: "", srcAlt: "", alt: "Street art piece 2",         desc: "" },
 
   /* ════════════════════════════════════════════════════════
      ⬇ AGREGA TUS PIEZAS NUEVAS AQUÍ ABAJO ⬇
      Cuando subas tus fotos reales, reemplaza los Piece 1/2 de arriba
      con tus datos reales y agrega más entradas aquí.
 
-     tag válidos: "blackout" | "blackwork" | "fullcolour" | "neon" | "sold" | "streetart"
+     tag válidos: "blackout" | "blackwork" | "neon"
 
   { name: "NOMBRE DE LA PIEZA",
     tag: "blackout",
