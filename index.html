@@ -992,11 +992,9 @@
   </div>
 
   <div class="filters-row" id="filters" role="group" aria-label="Filter by style">
-    <button class="fpill active" data-f="all">All</button>
     <button class="fpill" data-f="blackout">Blackout</button>
     <button class="fpill" data-f="blackwork">Blackwork</button>
     <button class="fpill" data-f="neon">Neon</button>
-    <button class="fpill" data-f="new">New</button>
   </div>
 
   <div class="piece-grid" id="piece-grid"></div>
@@ -1034,19 +1032,19 @@
 </div>
 
 <div class="cat-tiles" aria-label="Browse by style">
-  <div class="cat-tile" role="button" tabindex="0" aria-label="Blackout" onclick="document.querySelector('.fpill[data-f=blackout]').click();document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+  <div class="cat-tile" role="button" tabindex="0" aria-label="Blackout" onclick="setFilter('blackout');document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
     <div class="cat-tile-bg" aria-hidden="true">
       <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><rect x="10" y="10" width="80" height="80" fill="#111" opacity="0.7"/><rect x="25" y="25" width="50" height="50" fill="#fff" opacity="0.08"/></svg>
     </div>
     <div class="cat-tile-label"><div class="ctl-name">Blackout</div><div class="ctl-count">View pieces →</div></div>
   </div>
-  <div class="cat-tile" role="button" tabindex="0" aria-label="Blackwork" onclick="document.querySelector('.fpill[data-f=blackwork]').click();document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+  <div class="cat-tile" role="button" tabindex="0" aria-label="Blackwork" onclick="setFilter('blackwork');document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
     <div class="cat-tile-bg" aria-hidden="true">
       <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><path d="M20 80 Q35 40 50 50 Q65 60 80 20" stroke="#111" stroke-width="2" fill="none"/><circle cx="30" cy="35" r="10" stroke="#111" stroke-width="1.5" fill="none"/></svg>
     </div>
     <div class="cat-tile-label"><div class="ctl-name">Blackwork</div><div class="ctl-count">View pieces →</div></div>
   </div>
-  <div class="cat-tile" role="button" tabindex="0" aria-label="Neon" onclick="document.querySelector('.fpill[data-f=neon]').click();document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+  <div class="cat-tile" role="button" tabindex="0" aria-label="Neon" onclick="setFilter('neon');document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
     <div class="cat-tile-bg" aria-hidden="true">
       <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="#111" stroke-width="1.5" fill="none"/><circle cx="50" cy="50" r="16" stroke="#111" stroke-width="1" fill="none" stroke-dasharray="4,3"/><circle cx="50" cy="50" r="5" fill="#111" opacity="0.4"/></svg>
     </div>
@@ -1385,12 +1383,16 @@ document.addEventListener("keydown", e => {
 });
 
 /* ── FILTER PILLS ── */
+/* Sin filtro activo se muestran todas las piezas.
+   Tocar de nuevo el filtro activo vuelve a mostrar todo. */
+function setFilter(f) {
+  currentFilter = f;
+  document.querySelectorAll(".fpill").forEach(b => b.classList.toggle("active", b.dataset.f === f));
+  buildGrid(f);
+}
 document.querySelectorAll(".fpill").forEach(btn => {
   btn.addEventListener("click", () => {
-    document.querySelectorAll(".fpill").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    currentFilter = btn.dataset.f;
-    buildGrid(currentFilter);
+    setFilter(currentFilter === btn.dataset.f ? "all" : btn.dataset.f);
   });
 });
 
