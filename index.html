@@ -507,60 +507,6 @@
 
   .wb-btn:hover { background: transparent; color: var(--white); }
 
-  /* ── CATEGORY TILES ── */
-  .cat-tiles {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border);
-  }
-
-  .cat-tile {
-    background: var(--light);
-    aspect-ratio: 4 / 5;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-  }
-
-  .cat-tile-bg {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .cat-tile-bg svg { opacity: 0.1; }
-
-  .cat-tile:hover .cat-tile-bg { transform: scale(1.06); }
-
-  .cat-tile-label {
-    position: relative;
-    z-index: 1;
-    padding: 18px;
-    width: 100%;
-  }
-
-  .ctl-name {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--black);
-    margin-bottom: 4px;
-  }
-
-  .ctl-count {
-    font-size: 11px;
-    color: var(--gray);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-
   /* ── STUDIO STATS ── */
   .stats-strip {
     display: grid;
@@ -991,7 +937,6 @@
   @media (prefers-reduced-motion: reduce) {
     .ticker-inner { animation: none; }
     .piece-card { opacity: 1; transform: none; transition: none; }
-    .cat-tile-bg { transition: none; }
     .piece-img-main, .piece-img-alt { transition: none; }
   }
 </style>
@@ -1089,33 +1034,6 @@
     <a href="#booking" style="display:inline-block;background:var(--black);color:var(--white);border:1.5px solid var(--black);padding:13px 26px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;align-self:flex-start;" onmouseover="this.style.background='white';this.style.color='black'" onmouseout="this.style.background='black';this.style.color='white'">Book with me →</a>
   </div>
 </section>
-
-<!-- CATEGORIES -->
-<div class="sec-head">
-  <h2 class="sec-title" data-i18n="styles_title">Styles</h2>
-  <span class="sec-link" data-i18n="styles_link">Full gallery →</span>
-</div>
-
-<div class="cat-tiles" aria-label="Browse by style">
-  <div class="cat-tile" role="button" tabindex="0" aria-label="Blackout" onclick="setFilter('blackout');document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
-    <div class="cat-tile-bg" aria-hidden="true">
-      <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><rect x="10" y="10" width="80" height="80" fill="#111" opacity="0.7"/><rect x="25" y="25" width="50" height="50" fill="#fff" opacity="0.08"/></svg>
-    </div>
-    <div class="cat-tile-label"><div class="ctl-name">Blackout</div><div class="ctl-count">View pieces →</div></div>
-  </div>
-  <div class="cat-tile" role="button" tabindex="0" aria-label="Blackwork" onclick="setFilter('blackwork');document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
-    <div class="cat-tile-bg" aria-hidden="true">
-      <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><path d="M20 80 Q35 40 50 50 Q65 60 80 20" stroke="#111" stroke-width="2" fill="none"/><circle cx="30" cy="35" r="10" stroke="#111" stroke-width="1.5" fill="none"/></svg>
-    </div>
-    <div class="cat-tile-label"><div class="ctl-name">Blackwork</div><div class="ctl-count">View pieces →</div></div>
-  </div>
-  <div class="cat-tile" role="button" tabindex="0" aria-label="Neon" onclick="setFilter('neon');document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
-    <div class="cat-tile-bg" aria-hidden="true">
-      <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="30" stroke="#111" stroke-width="1.5" fill="none"/><circle cx="50" cy="50" r="16" stroke="#111" stroke-width="1" fill="none" stroke-dasharray="4,3"/><circle cx="50" cy="50" r="5" fill="#111" opacity="0.4"/></svg>
-    </div>
-    <div class="cat-tile-label"><div class="ctl-name">Neon</div><div class="ctl-count">View pieces →</div></div>
-  </div>
-</div>
 
 <!-- PROCESS -->
 <section class="process-section" id="process">
@@ -1524,13 +1442,6 @@ function setFilter(f) {
 document.querySelectorAll(".fpill").forEach(btn => {
   btn.addEventListener("click", () => {
     setFilter(currentFilter === btn.dataset.f ? "all" : btn.dataset.f);
-  });
-});
-
-/* ── CAT TILES (keyboard) ── */
-document.querySelectorAll(".cat-tile").forEach(tile => {
-  tile.addEventListener("keydown", e => {
-    if (e.key === "Enter" || e.key === " ") tile.click();
   });
 });
 
