@@ -123,6 +123,71 @@
     stroke-width: 1.8;
   }
 
+  /* ── BOOKING FORM ── */
+  #booking { scroll-margin-top: 56px; }
+  .booking-section {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    border-bottom: 1px solid var(--border);
+  }
+  .booking-intro {
+    padding: 64px 48px 64px 32px;
+    border-right: 1px solid var(--border);
+  }
+  .booking-intro .contact-body { margin-bottom: 0; }
+  .booking-form {
+    padding: 64px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 24px;
+    align-content: start;
+  }
+  .bf-field { display: flex; flex-direction: column; gap: 8px; }
+  .bf-field.full { grid-column: 1 / -1; }
+  .bf-field label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+  .bf-field label .opt { font-weight: 400; letter-spacing: 0.04em; text-transform: none; }
+  .bf-field input,
+  .bf-field select,
+  .bf-field textarea {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+    color: var(--black);
+    background: var(--white);
+    border: none;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    padding: 10px 0;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  .bf-field select { appearance: none; -webkit-appearance: none; cursor: pointer;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6' fill='%236b6b6b'/%3E%3C/svg%3E") no-repeat right 4px center; }
+  .bf-field textarea { resize: vertical; min-height: 110px; line-height: 1.6; }
+  .bf-field input:focus,
+  .bf-field select:focus,
+  .bf-field textarea:focus { border-bottom-color: var(--black); }
+  .bf-field input:user-invalid,
+  .bf-field textarea:user-invalid { border-bottom-color: var(--red); }
+  .bf-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .bf-actions { grid-column: 1 / -1; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 8px; }
+  .bf-actions .btn-fill { cursor: pointer; font-family: Inter, sans-serif; }
+  .bf-actions .btn-fill:disabled { opacity: 0.5; cursor: wait; }
+  .bf-status { font-size: 12px; line-height: 1.6; color: var(--gray); }
+  .bf-status.ok  { color: var(--black); }
+  .bf-status.err { color: var(--red); }
+  @media (max-width: 700px) {
+    .booking-section { grid-template-columns: 1fr; }
+    .booking-intro { padding: 48px 18px 8px; border-right: none; }
+    .booking-form { grid-template-columns: 1fr; padding: 32px 18px 56px; }
+  }
+
   /* ── HERO ── */
   .hero {
     display: grid;
@@ -1021,7 +1086,7 @@
     <p style="font-size:13px;line-height:1.85;color:var(--gray);margin-bottom:18px;">I'm Alina Kiltra — tattoo artist working under the name <strong style="color:var(--black);font-weight:600;">AQUATICO</strong>. My practice focuses on custom blackwork and contemporary tattooing — creating pieces that engage with the body, move with it, and respect its anatomy rather than simply being placed on top of it.</p>
     <p style="font-size:13px;line-height:1.85;color:var(--gray);margin-bottom:18px;">Every tattoo begins with an honest conversation. I'm drawn to depth, contrast, and the natural forms that already exist within each person's body.</p>
     <p style="font-size:13px;line-height:1.85;color:var(--gray);margin-bottom:36px;">From this perspective emerged <strong style="color:var(--black);font-weight:600;">Solid Projects</strong>, an ongoing exploration of the relationship between mind, body, and movement: tattooing as an expression of the mind, the body as a solid form, and the aquatic as a symbol of transformation and fluidity.</p>
-    <a href="#contact" style="display:inline-block;background:var(--black);color:var(--white);border:1.5px solid var(--black);padding:13px 26px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;align-self:flex-start;" onmouseover="this.style.background='white';this.style.color='black'" onmouseout="this.style.background='black';this.style.color='white'">Book with me →</a>
+    <a href="#booking" style="display:inline-block;background:var(--black);color:var(--white);border:1.5px solid var(--black);padding:13px 26px;font-family:Inter,sans-serif;font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;align-self:flex-start;" onmouseover="this.style.background='white';this.style.color='black'" onmouseout="this.style.background='black';this.style.color='white'">Book with me →</a>
   </div>
 </section>
 
@@ -1077,6 +1142,72 @@
       <p class="step-text" data-i18n="step4_text">If you’re happy with the proposal, we’ll coordinate a date for your appointment. A deposit is required to secure your booking.</p>
     </div>
   </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="booking-section" id="booking">
+  <div class="booking-intro">
+    <p class="contact-eyebrow">Booking request</p>
+    <h2 class="contact-title">Tell me about<br><strong>your piece.</strong></h2>
+    <p class="contact-body">
+      Share your idea, placement and approximate size. I'll review it and get back to you with the next steps and an estimated quote.
+    </p>
+  </div>
+  <form class="booking-form" id="booking-form" novalidate>
+    <div class="bf-field">
+      <label for="bf-name">Name</label>
+      <input id="bf-name" name="name" type="text" autocomplete="name" required>
+    </div>
+    <div class="bf-field">
+      <label for="bf-email">Email</label>
+      <input id="bf-email" name="email" type="email" autocomplete="email" required>
+    </div>
+    <div class="bf-field">
+      <label for="bf-phone">Phone <span class="opt">(optional)</span></label>
+      <input id="bf-phone" name="phone" type="tel" autocomplete="tel">
+    </div>
+    <div class="bf-field">
+      <label for="bf-ig">Instagram <span class="opt">(optional)</span></label>
+      <input id="bf-ig" name="instagram" type="text" placeholder="@">
+    </div>
+    <div class="bf-field">
+      <label for="bf-style">Style</label>
+      <select id="bf-style" name="style">
+        <option value="Not sure yet">Not sure yet</option>
+        <option value="Blackout">Blackout</option>
+        <option value="Blackwork">Blackwork</option>
+        <option value="Neon">Neon</option>
+      </select>
+    </div>
+    <div class="bf-field">
+      <label for="bf-size">Approx. size (cm)</label>
+      <input id="bf-size" name="size_cm" type="text" placeholder="e.g. 15 × 10" required>
+    </div>
+    <div class="bf-field full">
+      <label for="bf-placement">Placement on the body</label>
+      <input id="bf-placement" name="placement" type="text" placeholder="e.g. left forearm" required>
+    </div>
+    <div class="bf-field full">
+      <label for="bf-idea">Your idea</label>
+      <textarea id="bf-idea" name="idea" placeholder="Concept, meaning, anything you have in mind" required></textarea>
+    </div>
+    <div class="bf-field full">
+      <label for="bf-refs">Reference images <span class="opt">(optional — paste links, e.g. Google Drive or Pinterest)</span></label>
+      <input id="bf-refs" name="references" type="text">
+    </div>
+    <div class="bf-field full">
+      <label for="bf-dates">Availability <span class="opt">(optional)</span></label>
+      <input id="bf-dates" name="availability" type="text" placeholder="Preferred days or months">
+    </div>
+    <div class="bf-hp" aria-hidden="true">
+      <label for="bf-company">Company</label>
+      <input id="bf-company" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+    </div>
+    <div class="bf-actions">
+      <button class="btn-fill" type="submit" id="bf-submit">Send request →</button>
+      <p class="bf-status" id="bf-status" role="status" aria-live="polite"></p>
+    </div>
+  </form>
 </section>
 
 <!-- CONTACT -->
@@ -1402,6 +1533,65 @@ document.querySelectorAll(".cat-tile").forEach(tile => {
     if (e.key === "Enter" || e.key === " ") tile.click();
   });
 });
+
+/* ── BOOKING FORM ──
+   Para recibir los formularios en tu correo:
+   1. Crea una cuenta gratis en https://formspree.io con bookings@alinakiltra.com
+   2. Crea un formulario nuevo y copia su ID (ej. "xyzabcd")
+   3. Pégalo abajo, entre las comillas de FORMSPREE_ID
+   Mientras esté vacío, el botón abre el correo de la persona con todo
+   el formulario ya escrito, dirigido a bookings@alinakiltra.com. */
+const FORMSPREE_ID = "xaeeorae";
+const BOOKING_EMAIL = "bookings@alinakiltra.com";
+
+(function () {
+  const form = document.getElementById("booking-form");
+  if (!form) return;
+  const status = document.getElementById("bf-status");
+  const btn = document.getElementById("bf-submit");
+  const labels = { name: "Name", email: "Email", phone: "Phone", instagram: "Instagram",
+    style: "Style", size_cm: "Size (cm)", placement: "Placement", idea: "Idea",
+    references: "References", availability: "Availability" };
+
+  const setStatus = (msg, cls) => { status.textContent = msg; status.className = "bf-status " + (cls || ""); };
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      setStatus("Please fill in the required fields.", "err");
+      return;
+    }
+    const data = new FormData(form);
+    if (data.get("_gotcha")) return; // bot
+
+    if (!FORMSPREE_ID) {
+      const body = Object.keys(labels)
+        .filter(k => (data.get(k) || "").toString().trim())
+        .map(k => `${labels[k]}: ${data.get(k)}`).join("\n");
+      const subject = `Booking request — ${data.get("name")}`;
+      window.location.href = `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      setStatus("Your email app should open with your request ready to send.", "ok");
+      return;
+    }
+
+    btn.disabled = true;
+    setStatus("Sending…");
+    try {
+      data.append("_subject", `Booking request — ${data.get("name")}`);
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST", body: data, headers: { Accept: "application/json" }
+      });
+      if (!res.ok) throw new Error(res.status);
+      form.reset();
+      setStatus("Thank you! Your request was sent. I'll get back to you soon.", "ok");
+    } catch (err) {
+      setStatus(`Something went wrong. Please email me at ${BOOKING_EMAIL}.`, "err");
+    } finally {
+      btn.disabled = false;
+    }
+  });
+})();
 
 /* ── INIT ── */
 buildGrid("all");
